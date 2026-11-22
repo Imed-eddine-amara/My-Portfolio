@@ -3,32 +3,39 @@ import Head from "next/head";
 import Layout from "@/components/Layout";
 import AnimatedText from "@/components/AnimatedText";
 import Image from "next/image";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import { useInView, animate } from "framer-motion";
 import Skills from "@/components/Skills";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 
 const AnimatedNumbers = ({ value }) => {
   const ref = useRef(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { duration: 2500 });
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
+    if (isInView && ref.current) {
+      // For year 2027, count smoothly from 2000; for small numbers, start from 0
+      const startVal = value > 100 ? Math.max(0, value - 30) : 0;
+      const controls = animate(startVal, value, {
+        duration: 2,
+        ease: "easeOut",
+        onUpdate: (latest) => {
+          if (ref.current) {
+            ref.current.textContent = Math.round(latest);
+          }
+        },
+        onComplete: () => {
+          if (ref.current) {
+            ref.current.textContent = value;
+          }
+        },
+      });
+
+      return () => controls.stop();
     }
-  }, [isInView, value, motionValue]);
+  }, [isInView, value]);
 
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      if (ref.current && latest.toFixed(0) <= value) {
-        ref.current.textContent = latest.toFixed(0);
-      }
-    });
-  }, [springValue, value]);
-
-  return <span ref={ref}></span>;
+  return <span ref={ref}>{value > 100 ? value - 30 : 0}</span>;
 };
 
 export default function About() {
