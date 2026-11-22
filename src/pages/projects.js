@@ -14,10 +14,11 @@ const projectsData = [
     isFeatured: true,
     summary:
       "Industrial cold-chain monitoring system featuring dual-core ESP32 firmware in C/ESP-IDF with FreeRTOS multi-core scheduling, zero-touch AWS IoT Fleet Provisioning with X.509 certificates, mutual-TLS (mTLS) authentication, dual-bank A/B FOTA updates with automatic rollback, and an MCP conversational query backend.",
-    img: "/images/projects/crypto-screener-cover-image.jpg",
+    img: "/images/projects/coldguard-iot.svg",
     tags: ["ESP32", "FreeRTOS", "AWS IoT Core", "mTLS", "A/B FOTA", "FastAPI"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
+    priority: true,
   },
   {
     id: 2,
@@ -27,10 +28,11 @@ const projectsData = [
     isFeatured: true,
     summary:
       "4-layer impedance-controlled PCB designed in Altium Designer for RoboCare featuring an STM32WLE5 SoC, ±70V fault-protected THVD2419 RS-485 transceiver, 64 Mbit SPI NOR Flash data logging, and TI BQ24074 solar/battery power management with Dynamic Power-Path Management (DPPM), reducing regulator quiescent current by 99% down to 450 nA.",
-    img: "/images/projects/portfolio-cover-image.jpg",
+    img: "/images/projects/lora-pcb-node.svg",
     tags: ["Altium Designer", "STM32WLE5", "4-Layer PCB", "RS-485", "Solar DPPM", "LoRaWAN"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
+    priority: true,
   },
   {
     id: 3,
@@ -40,7 +42,7 @@ const projectsData = [
     isFeatured: true,
     summary:
       "Mathematical modeling of non-linear equations of motion for a 2D quadrotor drone covering altitude Z, position Y, and pitch attitude phi; design and tuning of cascade PID control loops for altitude regulation, lateral position tracking, and inner-loop stabilization in MATLAB and Simulink.",
-    img: "/images/projects/devdreaming.jpg",
+    img: "/images/projects/drone-control-sim.svg",
     tags: ["MATLAB", "Simulink", "Cascade PID", "Quadrotor Dynamics", "Control Systems"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -53,7 +55,7 @@ const projectsData = [
     isFeatured: true,
     summary:
       "Bootable AArch64 embedded Linux distribution built from scratch with Buildroot on QEMU virt machine, featuring BusyBox root filesystem overlays, Dropbear SSH, and a custom C system-monitoring daemon reading /proc/stat and /proc/meminfo with SysV init autostart.",
-    img: "/images/projects/nft-collection-website-cover-image.jpg",
+    img: "/images/projects/embedded-linux-buildroot.svg",
     tags: ["Embedded Linux", "Buildroot", "AArch64", "QEMU", "C", "procfs", "SysV init"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -66,7 +68,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "3D CAD modeling and mechanical assembly of an articulated robotic arm in SolidWorks; defined geometric mates, cylindrical pin linkages, and clevis joints, verifying mechanical clearances and kinematic range-of-motion alignment.",
-    img: "/images/projects/fashion-studio-website.jpg",
+    img: "/images/projects/robotic-arm-cad.svg",
     tags: ["SolidWorks", "3D CAD", "Mechanical Assembly", "Kinematics", "Robotics"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -79,7 +81,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Multithreaded embedded application utilizing periodic threads, GPIO interrupts, message queues, DeviceTree hardware description, and Kconfig customization for peripheral control and I2C LCD interfacing.",
-    img: "/images/projects/agency-website-cover-image.jpg",
+    img: "/images/projects/zephyr-rtos-stm32.svg",
     tags: ["Zephyr RTOS", "STM32F303", "DeviceTree", "Kconfig", "I2C LCD", "Interrupts"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -92,6 +94,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Deterministic task scheduling, inter-task communication via safe queues, mutex locks, and resource synchronization for concurrent real-time tasks on STM32F407VGTX.",
+    img: "/images/projects/freertos-sync-stm32.svg",
     tags: ["FreeRTOS", "STM32F407", "IPC Queues", "Task Synchronization", "CMSIS"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -104,6 +107,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Led a 5-student engineering team developing a distributed smart parking prototype integrating ultrasonic vehicle sensing (HC-SR04), Heltec ESP32 LoRa wireless nodes, Raspberry Pi 4 gateway, and Firebase Realtime Database.",
+    img: "/images/projects/smart-parking-iot.svg",
     tags: ["ESP32", "LoRa", "Raspberry Pi 4", "Firebase", "Ultrasonic Sensing"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -116,6 +120,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Edge facial detection and recognition using OpenCV in Python (>95% accuracy, ~0.8s latency) interfaced with 12V electromagnetic strike lock actuator circuitry, 3.3V relay, and fail-secure safety logic.",
+    img: "/images/projects/vision-access-control.svg",
     tags: ["OpenCV", "Python", "ESP32-CAM", "Raspberry Pi 4", "Relay Actuation"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -128,6 +133,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Autonomous obstacle-avoiding mobile robot prototype with ESP32 soft-AP, HTTP-to-WebSocket communication, motor control, and connected telemetry dashboard with Flutter.",
+    img: "/images/projects/robodash-mobile-robot.svg",
     tags: ["ESP32", "Motor Control", "Ultrasonic Sensing", "WebSockets", "Flutter"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -140,6 +146,7 @@ const projectsData = [
     isFeatured: false,
     summary:
       "Bare-metal peripheral driver directly manipulating RCC clock and GPIO registers on STM32 microcontrollers using memory-mapped I/O and CMSIS headers.",
+    img: "/images/projects/baremetal-cmsis-driver.svg",
     tags: ["Bare-Metal", "STM32", "CMSIS", "Memory-Mapped I/O", "Bit Masking"],
     link: "https://github.com/Imed-eddine-amara",
     github: "https://github.com/Imed-eddine-amara",
@@ -212,6 +219,7 @@ export default function Projects() {
                     tags={project.tags}
                     link={project.link}
                     github={project.github}
+                    priority={project.priority}
                   />
                 </div>
               ) : (

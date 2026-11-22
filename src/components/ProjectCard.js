@@ -14,6 +14,7 @@ export const FeaturedProject = ({
   link = "https://github.com/Imed-eddine-amara",
   github = "https://github.com/Imed-eddine-amara",
   tags = [],
+  priority = false,
 }) => {
   return (
     <article className="w-full flex items-center justify-between relative rounded-br-2xl rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4 my-8">
@@ -30,10 +31,12 @@ export const FeaturedProject = ({
           <FramerImage
             src={img}
             alt={title}
+            width={800}
+            height={480}
             className="w-full h-auto object-cover max-h-[360px]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
-            priority
+            priority={priority}
           />
         ) : (
           <div className="p-8 text-center flex flex-col items-center justify-center">
@@ -127,6 +130,8 @@ export const Project = ({
           <FramerImage
             src={img}
             alt={title}
+            width={800}
+            height={480}
             className="w-full h-auto object-cover max-h-[220px]"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.2 }}
